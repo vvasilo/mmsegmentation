@@ -52,6 +52,23 @@ def voc_classes():
     ]
 
 
+def Rellis3D_classes():
+    """Rellis-3D class names for external use."""
+    return [
+        "void", "grass", "tree", "pole", "water", "vehicle", "log", "person",
+        "fence", "bush", "concrete", "barrier", "puddle", "mud", "rubble"
+    ]
+
+
+def RUGD_classes():
+    """RUGD class names for external use."""
+    return [
+        "void", "dirt", "sand", "grass", "tree", "pole", "water", "sky", "vehicle", 
+        "container", "asphalt", "gravel", "building", "mulch", "rock-bed", "log", 
+        "bicycle", "person", "fence", "bush", "sign", "rock", "bridge", "concrete", "picnic table"
+    ]
+
+
 def cityscapes_palette():
     """Cityscapes palette for external use."""
     return [[128, 64, 128], [244, 35, 232], [70, 70, 70], [102, 102, 156],
@@ -112,10 +129,29 @@ def voc_palette():
             [128, 64, 0], [0, 192, 0], [128, 192, 0], [0, 64, 128]]
 
 
+def Rellis3D_palette():
+    """Rellis-3D palette for external use."""
+    return [[103, 142, 137], [171, 90, 236], [197, 87, 250], [114, 238, 167], 
+            [216, 195, 210], [100, 199, 101], [131, 144, 116], [136, 18, 36], 
+            [241, 160, 85], [122, 147, 50], [234, 63, 120], [136, 196, 250], 
+            [243, 140, 118], [226, 71, 10], [89, 174, 140]]
+
+
+def RUGD_palette():
+    """RUGD palette for external use."""
+    return [[0, 0, 0], [108, 64, 20], [255, 229, 204], [0, 102, 0], [0, 255, 0], 
+            [0, 153, 153], [0, 128, 255], [0, 0, 255], [255, 255, 0], [255, 0, 127], 
+            [64, 64, 64], [255, 128, 0], [255, 0, 0], [153, 76, 0], [102, 102, 0], 
+            [102, 0, 0], [0, 255, 128], [204, 153, 255], [102, 0, 204], [255, 153, 204], 
+            [0, 102, 102], [153, 204, 255], [102, 255, 255], [101, 101, 11], [114, 85, 47]]
+
+
 dataset_aliases = {
     'cityscapes': ['cityscapes'],
     'ade': ['ade', 'ade20k'],
-    'voc': ['voc', 'pascal_voc', 'voc12', 'voc12aug']
+    'voc': ['voc', 'pascal_voc', 'voc12', 'voc12aug'],
+    'Rellis3D' : ['Rellis3D'],
+    'RUGD' : ['RUGD']
 }
 
 
