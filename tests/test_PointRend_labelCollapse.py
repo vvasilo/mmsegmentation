@@ -50,6 +50,7 @@ model = init_segmentor(config_file,checkpoint_file,device='cuda:0')
 palette = get_palette('RUGD')
 
 def convert_label(img_array):
+    result = np.ndarray(shape=[img_array.shape[0], img_array.shape[1] ,3])
     for i in range(img_array.shape[0]):
         for j in range(img_array.shape[1]):
             for k in range(3):
@@ -71,8 +72,7 @@ for file in mmcv.scandir(image_folder):
     img = Image.open(image_folder+file)
     img = np.asarray(img)
     result = inference_segmentor(model,img)
-    result = np.ndarray(shape=[result[0].shape[0], result[0].shape[1] ,3])
-    result = change_label(result, label_mapping)
+    result = change_label(result[0], label_mapping)
     pred = convert_label(result)
     im = Image.fromarray(pred.astype(np.uint8))
     im.convert('RGB')
