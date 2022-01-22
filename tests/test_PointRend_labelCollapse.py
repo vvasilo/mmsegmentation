@@ -54,17 +54,17 @@ def convert_label(img_array):
     for i in range(img_array.shape[0]):
         for j in range(img_array.shape[1]):
             for k in range(3):
-                result[i][j][k] = palette[img_array[i][j]][k] # Add +1 because void class is suppressed
+                result[i][j][k] = palette[img_array[i][j]+1][k] # Add +1 because void class is suppressed
     return result
 
 def change_label(label, label_mapping, inverse=False):
     temp = label.copy()
     if inverse:
         for v, k in label_mapping.items():
-            label[temp == k] = v
+            label[temp == k-1] = v-1 # Subtract -1 because void class is suppressed
     else:
         for k, v in label_mapping.items():
-            label[temp == k] = v
+            label[temp == k-1] = v-1 # Subtract -1 because void class is suppressed
     return label
 
 # Output results
