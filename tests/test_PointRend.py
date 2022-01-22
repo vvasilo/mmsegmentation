@@ -28,7 +28,7 @@ def convert_label(img_array):
     for i in range(img_array.shape[0]):
         for j in range(img_array.shape[1]):
             for k in range(3):
-                result[i][j][k] = palette[img_array[i][j]+1][k] # Add +1 because void class is suppressed
+                result[i][j][k] = palette[img_array[i][j]][k] # Add +1 because void class is suppressed
     return result
 
 # Output results
